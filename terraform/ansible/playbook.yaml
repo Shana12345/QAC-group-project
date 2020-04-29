@@ -1,0 +1,26 @@
+- name: Run updates  
+  hosts: all
+  become: true
+  tasks:
+  - name: updating packages
+    command: sudo apt-get update -y
+
+- hosts: jenkins
+  become: true
+  roles:
+    - git
+  tasks:
+  - name: configuring jenkins user
+    command: sudo usermod -aG sudo jenkins
+
+- name: Setting up Kubernetes controller vm and installing docker
+  hosts: kubecontrol
+  become: true
+  roles:
+    - angular-node-npm
+    - docker  
+  tasks:
+  - name: Installing Kubectl
+    command: "{{item}}"
+    with_items:
+     - sudo az aks install-cli
