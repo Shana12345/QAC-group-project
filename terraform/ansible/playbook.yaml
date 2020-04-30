@@ -5,22 +5,15 @@
   - name: updating packages
     command: sudo apt-get update -y
 
-- hosts: jenkins
+- name: Setup Jenkins server
+  hosts: jenkins
   become: true
   roles:
-    - git
+    - jenkins # Install git so it can call the repo, and Java which jenkins depends on.
+    - geerlingguy.jenkins # Install Jenkins
+    - kubectl # Install kubectl (based on aws instructions at https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
   tasks:
   - name: configuring jenkins user
     command: sudo usermod -aG sudo jenkins
 
-- name: Setting up Kubernetes controller vm and installing docker
-  hosts: kubecontrol
-  become: true
-  roles:
-    - angular-node-npm
-    - docker  
-  tasks:
-  - name: Installing Kubectl
-    command: "{{item}}"
-    with_items:
-     - sudo az aks install-cli
+
