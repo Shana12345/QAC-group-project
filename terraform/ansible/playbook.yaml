@@ -16,4 +16,3 @@
   - name: configuring jenkins user
     command: sudo usermod -aG sudo jenkins
 
-
