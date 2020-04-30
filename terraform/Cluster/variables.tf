@@ -8,10 +8,7 @@ variable "aws_security_group" {
 }
 
 
-variable "aws_subnet1" {
+variable "aws_subnets" {
   
 }
 
-variable "aws_subnet2" {
-  
-}

@@ -1,7 +1,7 @@
 resource "aws_security_group" "group-project" {
   name        = "terraform-eks-group-project"
   description = "Cluster communication with worker nodes"
-  vpc_id      = "${var.aws_vpc.id}"
+  vpc_id      = var.aws_vpc
 
   ingress {
     description = "TLS from VPC"

@@ -17,8 +17,14 @@ module "aws_sg" {
 
 module "cluster" {
   source = "./Cluster"
-  aws_security_group = "${module.aws_sg.aws_sg}"
-  aws_subnet1 = "${module.aws_vpc.subnet1}"
-  aws_subnet2 = "${module.aws_vpc.subnet2}"
+  aws_security_group = ["${module.aws_sg.aws_sg}"]
+  aws_subnets= ["${module.aws_vpc.subnet1}", "${module.aws_vpc.subnet2}"]
 }
+
+module "EC2" {
+  source = "./EC2"
+  aws_subnetsEC2= "${module.aws_vpc.subnet1}"
+  sg= ["${module.aws_sg.aws_sg}"]
+}
+
 
