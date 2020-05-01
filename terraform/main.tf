@@ -25,6 +25,6 @@ module "EC2" {
   source = "./EC2"
   aws_subnetsEC2= "${module.aws_vpc.subnet1}"
   sg= ["${module.aws_sg.aws_sg}"]
+  
 }
-
 
