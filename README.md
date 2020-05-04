@@ -72,6 +72,10 @@ Throughout the course of the project we also had daily standups where we would i
 ![Planning]########################   Add last trello
 
 
+## Initial Design Plan
+
+[design]: https://i.imgur.com/uidsHny.png
+![design][design]
 
 <a name="Risk"></a>
 ## Risk Analysis (Needs to be added onece done)
