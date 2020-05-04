@@ -1,0 +1,12 @@
+- name: install git
+  become: true
+  shell: sudo apt install git -y
+  
+- name: install curl
+  become: true
+  shell: sudo apt install curl
+
+- name: install java
+  become: true
+  shell: sudo apt install openjdk-8-jdk -y
+
