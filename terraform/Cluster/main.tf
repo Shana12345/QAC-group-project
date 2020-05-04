@@ -1,6 +1,6 @@
 #EKS Cluster
 resource "aws_eks_cluster" "QAC-group-project" {
-  name     = var.cluster-name
+  name     = var.cluster_name
   role_arn = aws_iam_role.IAM-Roles.arn
 
   vpc_config {
