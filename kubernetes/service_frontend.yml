@@ -7,8 +7,8 @@ spec:
     app: frontend
   ports:
   - protocol: TCP
-    port: 4200
-    targetPort: 4200
+    port: 80
+    targetPort: 80
   type: ClusterIP
 ---
 apiVersion: apps/v1
@@ -30,7 +30,7 @@ spec:
       hostname: frontend
       containers:
       - name: frontend
-        image: adelina09/frontend:first
+        image: adelina09/frontend:latest
         ports:
-        - containerPort: 4200
+        - containerPort: 80
       
