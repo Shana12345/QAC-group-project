@@ -13,7 +13,7 @@
     - geerlingguy.jenkins # Install Jenkins
     - kubectl # Install kubectl (based on aws instructions at https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
     - apprequirements # Install requirements to run tests on the app
-    tasks:
+  tasks:
   - name: configuring jenkins user
     command: sudo usermod -aG sudo jenkins
 
