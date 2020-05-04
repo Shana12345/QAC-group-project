@@ -131,7 +131,11 @@ Things to add to the test sectrion:
 
 <a name="pipeline"></a>
 ## Deployment Pipeline
-![s5](/Documentation/Pipeline.jpg)
+
+[deployment]: https://i.imgur.com/Dc1nP6C.png
+
+![deployment][deployment]
+
 
 <a name="Deployment"></a>
 ## Deployment
