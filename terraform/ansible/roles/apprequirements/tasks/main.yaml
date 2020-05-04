@@ -1,3 +1,7 @@
+- name: adding repo
+  become: true
+  shell: curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+
 - name: install maven
   become: yes
   apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time=3600
