@@ -12,7 +12,8 @@
     - jenkins # Install git so it can call the repo, and Java which jenkins depends on.
     - geerlingguy.jenkins # Install Jenkins
     - kubectl # Install kubectl (based on aws instructions at https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
-  tasks:
+    - apprequirements # Install requirements to run tests on the app
+    tasks:
   - name: configuring jenkins user
     command: sudo usermod -aG sudo jenkins
 
