@@ -18,15 +18,24 @@
 <a name="Introduction"></a>
 ## Introduction 
 ### Project Brief
-The general outline of this project was to use all the concepts learnt out to this point, design and implement a solution for automating the deployments and development workflows for the projects that is linked below: 
++ Deploying frontend (Angular js) and backend (Restful API) applications.
++ The general outline of this project was to use all the concepts learnt out to this point, design and implement a solution for automating the deployments and development workflows for the projects that is linked below: 
  
 **Frontend and backend for client application** https://github.com/spring-petclinic/spring-petclinic-rest
  
  
  
-As a group of 5 individuals we would have to either use the tools we had been taught during our training such as **Terraform, Kubernetes, Ansible** or utilise other tools that would work in a similar fashion to these justifying why they would be the most preferable for deployment. 
+As a group of 5 individuals we would have to either use the tools we had been taught during our training such as **Terraform, Kubernetes, Ansible,Jenkins** or utilise other tools that would work in a similar fashion to these justifying why they would be the most preferable for deployment. 
 
 The deployment of this project would require automated building and re-deployment to testing and live environments upon any GitHub changes, whilst also keeping track of running costs.   
+
+### Our Solution:
++ Deploying infrastructure including EKS Cluster and Jenkins Server via Terraform
++ Utilising Docker to build images based on the applications
++ Containerising applications via Kubernetes 
++ Utilising Ansible for infrastructure configuration
++ Deploying Jenkins for CI/CD with Github Webhooks integration 
+
 
 <a name="prerequisites"></a>
 ## Deployment Prerequisites
