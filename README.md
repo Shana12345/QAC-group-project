@@ -87,6 +87,10 @@ Throughout the course of the project we also had daily standups where we would i
 ## Environments
 In this project we used multiple environments and tools to test, build and deploy the applications, the tools are listed below:
 
+[architecture]: https://i.imgur.com/MWmSKn9.png
+
+![architecture][architecture]
+
 - Terraform
 
 Terraform was used to create our deployment infrastructure as code, in this case to create two environements; Staging and Production. In Terrafform each environment is identical but is tagged as Production and Staging. The environments have 1 Kubernetes Cluster and all it dependencies, 1 VM for controlling the clusters using Kubectl and testing the app and finally a Jenkins CI/CD server which executes the pipeline by building, testing and deploying the application on the K8 cluster.
