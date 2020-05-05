@@ -51,6 +51,14 @@
       - pipeline-input-step
       - matrix-project
       - junit
+      - plain-credentials
+      - token-macro
+      - workflow-basic-steps
+      - workflow-durable-task-step
+      - pipeline-build-step
+      - pipeline-model-definition
+      - workflow-multibranch
+      - pipeline-milestone-step
 
     
   roles:
