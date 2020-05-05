@@ -1,7 +1,7 @@
 - name: install AWS kubectl binary
   become: true
   shell: curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/linux/amd64/kubectl
-  shell: sleep 5
+- name: move kubectl directory
   shell: chmod +x ./kubectl
   shell: sudo mv ./kubectl /usr/local/bin/kubectl
 - name: check kubectl installation
