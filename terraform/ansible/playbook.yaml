@@ -45,6 +45,11 @@
       - cloudbees-folder
       - apache-httpcomponents-client-4-api
       - jsch
+      - ace-editor
+      - pipeline-stage-step
+      - pipeline-graph-analysis
+      - pipeline-input-step
+      - matrix-project
 
     
   roles:
