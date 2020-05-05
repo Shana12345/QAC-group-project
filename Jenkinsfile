@@ -18,12 +18,12 @@ pipeline{
                 expression { params.TEST == true }
             }
             steps {
-                sh 'chmod +x ./script/*'
+                sh 'chmod +x ./Script/*'
                 sh 'echo "Begin Tests!"'
                 sh 'echo "backend testing"'
-                sh './script/tests-back.sh'
+                sh './Script/tests-back.sh'
                 sh 'echo "frontend testing"'
-                sh './script/tests-front.sh'
+                sh './Script/tests-front.sh'
             }
         }
 
@@ -33,7 +33,7 @@ pipeline{
             }
             steps {
                 sh 'echo "Begin Deployment!"'
-                sh './script/deployment.sh'
+                sh './Script/deployment.sh'
                 sh 'echo "Deployment Complete!"'
             }
         }
