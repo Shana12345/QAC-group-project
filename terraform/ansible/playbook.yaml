@@ -61,6 +61,12 @@
       - pipeline-milestone-step
       - branch-api
       - durable-task
+      - pipeline-stage-tags-metadata
+      - docker-workflow
+      - pipeline-model-extensions
+      - credentials-binding
+      - pipeline-model-api
+      - pipeline-model-declarative-agent
 
     
   roles:
