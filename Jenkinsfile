@@ -18,7 +18,10 @@ pipeline{
                 expression { params.TEST == true }
             }
             steps {
+                sh 'echo "Begin Tests!"'
+                sh 'echo "backend testing"'
                 sh './script/tests-back.sh'
+                sh 'echo "frontend testing"'
                 sh './script/tests-front.sh'
             }
         }
@@ -28,7 +31,9 @@ pipeline{
                 expression { params.DEPLOY == true }
             }
             steps {
+                sh 'echo "Begin Deployment!"'
                 sh './script/deployment.sh'
+                sh 'echo "Deployment Complete!"'
             }
         }
     }
