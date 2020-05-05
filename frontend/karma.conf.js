@@ -8,7 +8,7 @@ module.exports = function (config) {
     plugins: [
       require('karma-coverage'),
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),      
+      require('karma-chrome-launcher'),
       require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
@@ -25,13 +25,13 @@ module.exports = function (config) {
       type:'text',
       file: 'Coverage.txt'
     },
-    
+
     reporters: ['progress', 'kjhtml','coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['PhantomJS'],
-    singleRun: true
+    singleRun: true 
   });
 };
