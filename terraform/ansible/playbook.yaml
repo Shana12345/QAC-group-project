@@ -19,6 +19,26 @@
       - pipeline-github-lib
       - pipeline-stage-view
       - github-branch-source
+      - workflow-scm-step
+      - mailer
+      - ssh-credentials
+      - credentials
+      - scm-api
+      - git-client
+      - workflow-step-api
+      - structs
+      - lockable-resources
+      - pipeline-rest-api
+      - workflow-job
+      - jquery-detached
+      - workflow-api
+      - momentjs
+      - handlebars
+      - jackson2-api
+      - github
+      - github-api
+      - workflow-cps-global-lib
+
     
   roles:
     - jenkins # Install git so it can call the repo, and Java which jenkins depends on.
