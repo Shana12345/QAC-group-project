@@ -18,6 +18,7 @@ pipeline{
                 expression { params.TEST == true }
             }
             steps {
+                sh 'chmod +x ./script/*'
                 sh 'echo "Begin Tests!"'
                 sh 'echo "backend testing"'
                 sh './script/tests-back.sh'
