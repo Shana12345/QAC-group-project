@@ -50,6 +50,7 @@
       - pipeline-graph-analysis
       - pipeline-input-step
       - matrix-project
+      - junit
 
     
   roles:
