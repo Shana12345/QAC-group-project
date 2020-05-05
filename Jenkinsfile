@@ -32,6 +32,7 @@ pipeline{
                 expression { params.DEPLOY == true }
             }
             steps {
+                sh 'chmod +x ./Script/*'
                 sh 'echo "Begin Deployment!"'
                 sh './Script/deployment.sh'
                 sh 'echo "Deployment Complete!"'
