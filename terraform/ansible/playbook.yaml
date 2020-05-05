@@ -59,6 +59,8 @@
       - pipeline-model-definition
       - workflow-multibranch
       - pipeline-milestone-step
+      - branch-api
+      - durable-task
 
     
   roles:
