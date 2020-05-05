@@ -1,9 +1,37 @@
-- name: install AWS kubectl binary
-  become: true
-  shell: curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/linux/amd64/kubectl
-- name: move kubectl directory
-  become: true
-  shell: chmod +x ./kubectl
-  shell: mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
-- name: check kubectl installation
-  shell: kubectl version --client
+- name: Docker Installation
+  apt:
+    name: docker.io
+    state: present
+    update_cache: true
+- name: install APT Transport HTTPS
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: add Kubernetes apt-key for APT repository
+  apt_key:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      state: present
+
+- name: add Kubernetes APT repository
+  apt_repository:
+    repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+    filename: 'kubernetes'
+
+- name: install kubelet
+  apt:
+    name: kubelet=1.14.0-00
+    state: present
+    update_cache: true
+
+- name: install kubeadm
+  apt:
+    name: kubeadm=1.14.0-00
+    state: present
+
+- name: install kubectl
+  apt:
+    name: kubectl=1.14.0-00
+    state: present
+    force: yes
