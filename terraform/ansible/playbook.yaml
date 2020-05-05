@@ -38,6 +38,13 @@
       - github
       - github-api
       - workflow-cps-global-lib
+      - display-url-api
+      - workflow-support
+      - workflow-cps
+      - git-server
+      - cloudbees-folder
+      - apache-httpcomponents-client-4-api
+      - jsch
 
     
   roles:
