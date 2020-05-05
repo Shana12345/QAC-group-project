@@ -68,6 +68,7 @@
       - pipeline-model-api
       - pipeline-model-declarative-agent
       - docker-commons
+      - authentication-tokens
 
     
   roles:
