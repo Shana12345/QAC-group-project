@@ -1,11 +1,10 @@
----
 # Optional method of pinning a specific version of Jenkins and/or overriding the
 # default Jenkins packaging URL.
 # jenkins_version: "1.644"
 # jenkins_pkg_url: "https://www.example.com"
 
 # Change this to `latest` to update Jenkins if a newer version is available.
-jenkins_package_state: latest
+jenkins_package_state: present
 
 jenkins_prefer_lts: false
 
@@ -19,12 +18,10 @@ jenkins_url_prefix: ""
 jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
 
 # Plugin list can use the plugin name, or a name/version dict.
-jenkins_plugins:
-  - git
-  - pipeline
-  - pipeline-github-lib
-  - pipeline-stage-view
-  - github-branch-source
+jenkins_plugins: []
+#  - blueocean
+#  - name: influxdb
+#    version: "1.12.1"
 
 jenkins_plugins_state: present
 jenkins_plugin_updates_expiration: 86400
