@@ -27,3 +27,7 @@
 - name: install jdk
   become: true
   shell: sudo apt install default-jdk -y
+
+- name: install phantomjs
+  become: true
+  shell: sudo npm install phantomjs
