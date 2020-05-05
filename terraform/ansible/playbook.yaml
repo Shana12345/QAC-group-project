@@ -14,7 +14,7 @@
     jenkins_plugins_state: latest
     jenkins_plugins:  
       - git
-      - pipeline
+      - workflow-aggregator
       - pipeline-github-lib
       - pipeline-stage-view
       - github-branch-source
