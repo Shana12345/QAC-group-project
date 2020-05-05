@@ -67,6 +67,7 @@
       - credentials-binding
       - pipeline-model-api
       - pipeline-model-declarative-agent
+      - docker-commons
 
     
   roles:
