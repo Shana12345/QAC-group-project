@@ -145,7 +145,7 @@ As the project started progressing, the diagram changed shape to a closer repres
 
 ![Final Diagram](https://i.imgur.com/MWmSKn9.png)
 
-Terraform was used to create our deployment infrastructure as code, in this case to create two environements: Staging and Production. The environments have 1 Kubernetes Cluster and all it dependencies, 1 Virtual Machine for controlling the clusters using kubernetes commands and testing the application, and finally a Jenkins CI/CD server which executes the pipeline by building, testing and deploying the application on the Kubernetes cluster.
+Terraform was used to create our deployment infrastructure as code, in this case to create two environements: Staging and Production. The environments have 1 Kubernetes Cluster and all its dependencies, 1 Virtual Machine for controlling the clusters using kubernetes commands and testing the application, and finally a Jenkins CI/CD server which executes the pipeline by building, testing and deploying the application on the Kubernetes cluster.
 
 We chose Terraform as it allows us write infrastructure as code in a quicker and easier manner than using the conventional way. The infrastructure configurations can be versioned and maintained, so if another environment needs to be created, you can ensure the latest configurations are used, thus avoiding environment drift.
 
