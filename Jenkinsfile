@@ -45,7 +45,10 @@ pipeline{
                 sh 'chmod +x ./Script/*'
                 sh 'echo "Begin Deployment!"'
                 sh './Script/deployment.sh'
+
                 sh './Script/deployment2.sh'
+
+
                 sh 'echo "Deployment Complete!"'
             }
         }
