@@ -270,9 +270,9 @@ The initial estimate came to just under £5 for the 9 days we had allocated for 
 *	Run aws configure
 *	Input your Access_key and Secret Access key here (Remember IAM user to have EKS full access)
 *	Manually create kubeconfig file and add the following for the cluster:
-1.  endpoint-url
-2.	base64-encoded-ca-cert
-3.	cluster-name (Follow this [link]( https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html) for further guidance)
+    1.  endpoint-url
+    2.	base64-encoded-ca-cert
+    3.	cluster-name (Follow this [link]( https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html) for further guidance)
 *	Update kubeconfig for the cluster
 *	Get the IP address of the server you're on.
 *	Open a web browser and paste it on the address bar with :8080 at the end of the URL.
