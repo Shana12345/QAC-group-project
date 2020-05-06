@@ -123,8 +123,13 @@ A risk matrix is a matrix that is used during the risk assessment process to def
 <a name="Architecture"></a>
 ## Architecture
 
+<a name="FeatureBranch"></a>
+## Feature Branch Model
+The project consists of 7 branches, to ensure code quality across the duration of the project. As this is a group project, it has been decided that each member would have their own branch, as shown in the image below. The developer branch has been kept alongside the master branch for any last minute changes, when the members' branches are all merged into it. 
 
+![Feature Branch Model](https://i.imgur.com/QMEGqRH.png)
 
+All the branches presented above have now been merged into the master branch, ready for the delivery of the project. 
 
 
 <a name="Technology"></a>
