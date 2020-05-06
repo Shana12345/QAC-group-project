@@ -10,8 +10,10 @@
   * [Initial Risk Analysis](#InitialRisk)
   * [Final Risk Analysis](#FinalRisk)
   * [Risk Analysis Matrix](#RiskMatrix)
-* [Technologies Used](#Technology) 
-* [Environments ](#Environments)
+* [Architecture](#Architecture)
+  * [Feature Branch Model](#FeatureBranch)
+  * [Technologies Used](#Technology) 
+  * [Environments ](#Environments)
 * [Testing](#Testing)
 * [Deployment Pipeline](#pipeline)
 * [Deployment](#Deployment)
@@ -118,6 +120,14 @@ A risk matrix is a matrix that is used during the risk assessment process to def
 
 ![Risk Assessment Matrix](https://i.imgur.com/dgm9rDZ.png)
 
+
+<a name="Architecture"></a>
+## Architecture
+
+
+
+
+
 <a name="Technology"></a>
 ## Technologies Used
 
@@ -129,7 +139,6 @@ A risk matrix is a matrix that is used during the risk assessment process to def
 | Ansible | Allows us to provision, manage and automate the deployment of containers across nodes. |
 | Jenkins | Used to implement continuous integration within our application. Used alongside GitHub to implement the pipeline. |
 | Kubernetes | Used to create multiple nodes that will manage, scale and run the final application. |
-
 
 
 
