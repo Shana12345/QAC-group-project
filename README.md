@@ -200,6 +200,7 @@ The Kubernetes cluster has been created using Terraform in the testing and produ
 ## Deployment
 
 
+
 The App was deployed using Ansible,Jenkins and Nginx.
 
  + Ansible Configuration Management tool is used to install the dependencies onto the Jenkins server by deploying Ansible Playbook
@@ -224,6 +225,7 @@ As previously mentioned, Terraform has been used to create the infrastructure. T
 <a name="Costs"></a>
 ## Costs
 We used Pricing Calculator to configure and estimate the monthly running costs for the AWS services used. We have decided we needed 2 Virtual Machines and the AWS Kubernetes Service. The application has been deployed in the eu-west-3 region, meaning that the virtual resources we have used are based in Paris, Europe. We have been allocated a budget of £20 at the beginning of the project however, as the time went on, we have spent a very small amount of the allocated budget. The cost had been minimised by stopping the resources at the end of each working day and by setting up a billing alert when the cost increased to more than £5. 
+
 
 ![Pricing](https://i.imgur.com/nE7eKnb.png)
 
@@ -255,6 +257,7 @@ The initial estimate came to just under £5 for the 9 days we had allocated for 
 * XRay to be implemented on the spring application so we can monitor the API level request.
 * CodePipeline as a serverless solution and replace Jenkins.
 
+
 A Future Sprint has been displayed on the Trello Board below:
 
 [future]:  https://i.imgur.com/YT2bohn.png?1
@@ -276,6 +279,7 @@ A Future Sprint has been displayed on the Trello Board below:
 * Create an AWS .pem key, if you don't already have one. This needs to be created in the same region as the one you intend to deploy your project, in this case it would be in the eu-west-3 region.
 * Log in on the terminal using your AWS CLI account. 
 * Using [this](https://learn.hashicorp.com/terraform/getting-started/install.html) link, install terraform on your local machine.
+
 *	Navigate into the terraform folder within this repository. Run terraform init to initialize a working directory containing Terraform configuration files.
 *	Run the terraform plan command to verify the integrity of the code.
 *	If no errors show up, use the command terraform apply to build the infrastructure. This will last around 10 minutes.
