@@ -116,11 +116,21 @@ The project started by creating an initial risk assessment as shown below. As th
 
 A risk matrix is a matrix that is used during the risk assessment process to define the level of risk by considering the category of probability or likelihood against the category of consequence severity. This is a simple mechanism to increase visibility of risks and assist management decision making.
 
-https://i.imgur.com/dgm9rDZ.png
+![Risk Assessment Matrix](https://i.imgur.com/dgm9rDZ.png)
 
 <a name="Technology"></a>
 ## Technologies Used
-![Group-Tech-used](https://user-images.githubusercontent.com/61239212/80956449-2c6dfc00-8df9-11ea-89ff-aeed05e1f977.png)
+
+| Technology       |  Description    |
+|:-------------:|:------------------:|
+| GitHub    | Due to familiarity, cost and ease of access, the group decided to use GitHub to aid with the version control of the application. It also provides ease when integrating with the deployment pipeline, allowing us to seamlessly apply changes and implement them.  | 
+| Docker | Used to create an image of the front end application. |
+| Terraform | Enables us to create the base infrastructure and configure virtual machines for Jenkins and Kubernetes. |
+| Ansible | Allows us to provision, manage and automate the deployment of containers across nodes. |
+| Jenkins | Used to implement continuous integration within our application. Used alongside GitHub to implement the pipeline. |
+| Kubernetes | Used to create multiple nodes that will manage, scale and run the final application. |
+
+
 
 
 <a name="Environments"></a>
