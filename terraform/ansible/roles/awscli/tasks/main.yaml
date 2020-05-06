@@ -2,9 +2,13 @@
   become: true
   command: sudo apt install zip -y
 
-- name: install awscli
+- name: curl awscli
   become: true
   command: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+- name: install awscli
+  become: true
   command: unzip awscliv2.zip
   command: sudo ./aws/install
+- name: confirm aws installation
+  become: true
   command: aws --version
