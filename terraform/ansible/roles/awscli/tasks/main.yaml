@@ -1,0 +1,16 @@
+- name: install zip
+  become: true
+  command: sudo apt install zip -y
+
+- name: install awscli
+  become: true
+  command: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+  command: unzip awscliv2.zip
+  command: sudo ./aws/install
+  command: aws --version
+
+- name: configure awscli
+  become: true
+  command: sudo su jenkins
+  command: cd ~
+  command: aws eks --region eu-west-3 update-kubeconfig --name terraform-eks-group-project

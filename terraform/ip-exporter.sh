@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "[jenkins]" > ../ansible/inventory.cfg
-echo $(terraform output public_ip) >> ../ansible/inventory.cfg # Calls the pub IP of EC2 created by terraform and pastes into inventory file
+cat ip_address.txt >> ../ansible/inventory.cfg # Calls the pub IP of EC2 created by terraform and pastes into inventory file
 echo "" >> ../ansible/inventory.cfg
 echo "[jenkins:vars]" >> ../ansible/inventory.cfg
 echo "ansible_user=root" >> ../ansible/inventory.cfg
