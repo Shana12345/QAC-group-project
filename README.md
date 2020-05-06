@@ -208,10 +208,10 @@ As previously mentioned, Terraform has been used to create the infrastructure. T
 <a name="Costs"></a>
 ## Costs
 We used Pricing Calculator to configure and estimate the monthly running costs for the AWS services used. We have decided we needed 2 Virtual Machines and the AWS Kubernetes Service. The application has been deployed in the eu-west-3 region, meaning that the virtual resources we have used are based in Paris, Europe. We have been allocated a budget of £20 at the beginning of the project however, as the time went on, we have spent a very small amount of the allocated budget. The cost had been minimised by stopping the resources at the end of each working day and by setting up a billing alert when the cost increased to more than £5. 
-The initial estimate came to £3.34 for the 9 days we had allocated for the project, for 8 hours a day. The cost has been calculated based on the use of only two t2.medium instances. 
 
-![Pricing](https://i.imgur.com/3EieeaX.png)
+![Pricing](https://i.imgur.com/nE7eKnb.png)
 
+The initial estimate came to just under £5 for the 9 days we had allocated for the project, for 8 hours a day, thus the low limit of the billing alert. The cost has been calculated based on the use of only two t2.medium instances, however another two t2.small instances have been used. The final cost has not reached the billing alert across the team, and therefore we believed we have delivered a very cost efficient solution.   
 
 
 <a name="Conclusion"></a>
@@ -223,6 +223,7 @@ The initial estimate came to £3.34 for the 9 days we had allocated for the proj
 * Team meetings were helpful and orientating.
 * Good team communication throughout the duration of the project. 
 * Created the Ansible and Jenkins files without much difficulty.
+* Delivered a cost efficient solution.
 
 <a name="Bad"></a>
 ## What went wrong
