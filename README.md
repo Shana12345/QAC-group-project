@@ -175,11 +175,6 @@ The Kubernetes cluster has been created using Terraform in the testing and produ
 <a name="Testing"></a>
 ## Testing
 
-Things to add to the test section:
-1. backent testing
-2. frontend testing
-3. And requirements for both of them
-4. Add coverage
 
 <a name="Backend"></a>
 ## Backend Testing
@@ -190,7 +185,6 @@ Things to add to the test section:
 
 <a name="Coverage"></a>
 ## Coverage Report
-
 
 
 
@@ -241,6 +235,21 @@ The initial estimate came to just under £5 for the 9 days we had allocated for 
 
 <a name="InstallationGuide"></a>
 ## Installation Guide
+## Pre-requisites
+* AWS account
+* AWS CLI account
+* Terraform knowledge
+* Kubernetes knowledge
+
+## Steps
+* Clone the project from this repository using the git clone command. 
+* Log in to you AWS account. 
+* Create an AWS .pem key, if you don't already have one. This needs to be created in the same region as the one you intend to deploy your project, in this case it would be in the eu-west-3 region.
+* Log in on the terminal using your AWS CLI account. 
+* Using [this](https://learn.hashicorp.com/terraform/getting-started/install.html) link, install terraform on your local machine.
+* Navigate into the terraform folder within this repository. Run the terraform plan command to verify the integrity of the code. 
+* If no errors show up, use the command terraform apply to build the infrastructure. This will last around 10 minutes. 
+
 
 
 <a name="Authors"></a>
