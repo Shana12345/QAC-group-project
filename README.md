@@ -201,7 +201,7 @@ The App was deployed using Ansible,Jenkins and Nginx.
 
 Below is the diagram demonstrating the **Deployment Process**:
 
-[deployment]:  https://i.imgur.com/Jj9jPF5.png?1
+[deployment]:  https://i.imgur.com/EylRmiS.png
 
 ![deployment][deployment]
 
