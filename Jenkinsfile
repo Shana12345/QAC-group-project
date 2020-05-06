@@ -21,7 +21,7 @@ pipeline{
                 sh 'chmod +x ./Script/*'
                 sh 'echo "backend testing"'
                 sh './Script/tests-back.sh'
-                sh 'rm -rf *'
+
             }
         }
 
@@ -33,7 +33,7 @@ pipeline{
                 sh 'chmod +x ./Script/*'
                 sh 'echo "frontend testing"'
                 sh './Script/tests-front.sh'
-                sh 'rm -rf *'
+
             }
         }
 
