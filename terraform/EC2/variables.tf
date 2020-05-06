@@ -11,9 +11,9 @@ variable "ami_id" {
 
 }
 
-variable "t2_micro" {
+variable "t2_medium" {
   #chanche this into a medium
-  default = "t2.micro"
+  default = "t2.medium"
 }
 
 variable "key_name" {
