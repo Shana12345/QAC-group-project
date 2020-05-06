@@ -201,10 +201,11 @@ The App was deployed using Ansible,Jenkins and Nginx.
 
 Below is the diagram demonstrating the **Deployment Process**:
 
+<p align="center">
 [deployment]:  https://i.imgur.com/lF8gMWj.png?1
 
 ![deployment][deployment]
-
+</p>
 <a name="Pipeline"></a>
 ## Deployment Pipeline
 
