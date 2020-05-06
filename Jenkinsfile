@@ -13,15 +13,23 @@ pipeline{
     }
     stages{
 
-        stage('Tests'){
+        stage('Backend Tests'){
             when {
                 expression { params.TEST == true }
             }
             steps {
                 sh 'chmod +x ./Script/*'
-                sh 'echo "Begin Tests!"'
                 sh 'echo "backend testing"'
                 sh './Script/tests-back.sh'
+            }
+        }
+
+        stage('Frontend Tests'){
+            when {
+                expression { params.TEST == true }
+            }
+            steps {
+                sh 'chmod +x ./Script/*'
                 sh 'echo "frontend testing"'
                 sh './Script/tests-front.sh'
             }
