@@ -24,7 +24,8 @@
 * [Retrospective](#Conclusion) 
   * [What Went Well](#Good)
   * [What Went Wrong](#Bad)
-  * [Future Work](#FutureWork) 
+  * [Future Improvements](#Improvements) 
+* [Installation Guide](#InstallationGuide)
 
 <a name="Introduction"></a>
 ## Introduction 
@@ -195,22 +196,17 @@ Things to add to the test section:
 <a name="Deployment"></a>
 ## Deployment
 
-We used Terraform to create the infrastructure (VM's and Kubernetes Cluster) after this process we used Ansible to go into the VM's we  created and install all the applications we would need for the project to work e.g Jenkins, Java, Python, Docker, Maven. After running Ansible we then trigger the build process which is running on our Jenkins CI/CD server, this tests the application and if the tests pass the deployment stage is triggered and the application is deployed to the Kubernetes Cluster on Azure. See video Below for more info.
-
-
-
 <a name="Pipeline"></a>
 ## Deployment Pipeline
 
-[deployment]: https://i.imgur.com/NM5hLSI.png
+As previously mentioned, Terraform has been used to create the infrastructure. The next step was to use Ansible to install all the dependencies on the Virtual Machines. The build process is then triggered, Jenkins starts, tests the application and if the test succeeds, the deployment stage of the pipeline is triggered. The application would then be deployed on the Kubernetes cluster within AWS. 
 
-![deployment][deployment]
-
+![deployment](https://i.imgur.com/NM5hLSI.png)
 
 
 <a name="Costs"></a>
 ## Costs
-We used Pricing Calculator to configure and estimate the monthly running costs for the AWS products that we need to automate the deployment of the application. We decided that we need 2 VMs and the AWS Kubernetes Service, we used eu-west-2 as region because that’s what we found available according to the subscription that we were using and we came to the conclusion that we would have an operational expenditure of £32.82 plus 0.01USD per hour to run terraform, paying only for what we are using with no upfront costs for the services.
+We used Pricing Calculator to configure and estimate the monthly running costs for the AWS products that we needed to automate the deployment of the application. We decided that we need 2 Virtual Machines and the AWS Kubernetes Service.  we used eu-west-2 as region because that’s what we found available according to the subscription that we were using and we came to the conclusion that we would have an operational expenditure of £32.82 plus 0.01USD per hour to run terraform, paying only for what we are using with no upfront costs for the services.
 ![Group-Cost](https://user-images.githubusercontent.com/61239212/80957894-fb42fb00-8dfb-11ea-9012-7492fdb57d4d.png)
 
 
@@ -218,17 +214,28 @@ We used Pricing Calculator to configure and estimate the monthly running costs f
 <a name="Conclusion"></a>
 ## Retrospective
 
-What went well:
+<a name="Good"></a>
+## What went well:
 * Using terraform to create the infrastructure went swiftly without many issues. 
 * Team meetings were helpful and orientating.
-* ADD SOMETHING ELSE
+* Good team communication throughout the duration of the project. 
+* Created the Ansible and Jenkins files without much difficulty.
 
-What went wrong:
-* Running the frontend application came with some issues that requiered the help of our instructor.
-* Creating pods for the cluster took some extra time.
+<a name="Bad"></a>
+## What went wrong:
+* Running the frontend application came with some issues that requiered the help of our trainer.
+* Creating the pods for the cluster took longer than expected.
+* Issues when using the AWS free tier service, so had to pay for running the simple Virtual Machines. 
+* The backend and frontend of the application not communicating, wasted a lot of time on trying to fix the issue. 
 
-Future improvements:
-* A more detail examination of the costs.
-* ADD SOMETHING ELSE. 
+<a name="Improvements"></a>
+## Future improvements:
+* Add the CloudWatch alert.
+* Implement the Lambda function to take daily snapshots.
+* XRay to be implemented on the spring application so we can monitor the API level request.
+* CodePipeline as a serverless solution and replace Jenkins.
+
+<a name="InstallationGuide"></a>
+## Installation Guide
 
 
