@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01EVXdOakV4TXpRMU9Gb1hEVE13TURVd05ERXhNelExT0Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTkFzCk1iZURSYi80RlBqaitkTk1RYU50a0tuMmdodmF3VlNnR2R4WDJiRGNtc2MzeHpzS2lGaDFMN3Rjb1V1ZFdxYlkKNENOUGtQM09MOFBvZStzQjNncnRzakhaa2pYdWNOVmdHVlk2U0ZINVVhZ2JuSTZvYWlhZVBBQXpReG1ucmk1TgpsdVA4VWR2cWR3NkFtcGpDUk91VXQxeUxPdXV5YmZBYWtMbkZUU0lpV1RlSjBEUWpYTC9kWVU1WDhwRkU5RXIwCnJSUUthWU1TKzRjU3dsdVMrMVlPMGhRd2JCWWJvME1kMXU0aHFnTHNWZTZUY2dWWFFUaXpUZjdvZHFCWjBDY04KSDMyVTE3cUZNZmdvd1dGTEdJTzhFeXc5T3UvSmZ6bU1nZXdkWTJDZW50VkVCdGh3VzAwbmxtbzZIWFJheGY2SQovZGtQN0RYREI5bUVOeVVPaW5zQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFJTEhJWE9QY0h3M0dhUkE1bTUzMEdFVWt5MDUKLys5TlgzQTlROUpFcEQrN3V0NGRJRmZPYWdHU1hSUnJQQnlwb0pyYnFFMWZOSENKcEp2aGoxTWFHYWQwRmpyZQpGanVSaDM2eTh1N3RsNTZpeDBmUHd3SU84UC9EQXpxemRROTdlTTJXVzIwb09YY1ZsNmRZaWhOdGlQd2VrVTJsCjdmTmNIV0NCN05TbGpFMUJ2bDIxZlc5TVozaXNBejhzQlp5aERRY3B6Rmt3V05wdVo5MWh1OVNPTGNYNWVyR2sKMFNHV2FLbUc5enZZNWltWjMvRGFvZlpySGRYV2hUZVJWY0ZwOXRqRFI1R3FTblQ0VlN3ek1HL2JmbFIxQldGZgpGOS9HSFlEaFBlT0hUZFBEdXJIWjlHeDJ6K1B1NXp1Wk5aNXRwU21SMlNVWTRERmU4UkdvcTV1ckRjbz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://361BEB4FCB0F6D4B27C80824DE6F6C83.yl4.eu-west-3.eks.amazonaws.com
+  name: arn:aws:eks:eu-west-3:711220535622:cluster/terraform-eks-group-project
+contexts:
+- context:
+    cluster: arn:aws:eks:eu-west-3:711220535622:cluster/terraform-eks-group-project
+    user: arn:aws:eks:eu-west-3:711220535622:cluster/terraform-eks-group-project
+  name: arn:aws:eks:eu-west-3:711220535622:cluster/terraform-eks-group-project
+current-context: arn:aws:eks:eu-west-3:711220535622:cluster/terraform-eks-group-project
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:eu-west-3:711220535622:cluster/terraform-eks-group-project
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - --region
+      - eu-west-3
+      - eks
+      - get-token
+      - --cluster-name
+      - terraform-eks-group-project
+      command: aws
