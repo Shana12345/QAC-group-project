@@ -21,11 +21,11 @@
 + Deploying frontend (Angular js) and backend (Restful API) applications.
 + The general outline of this project was to use all the concepts learnt out to this point, design and implement a solution for automating the deployments and development workflows for the projects that is linked below: 
  
-**Frontend and backend for client application** https://github.com/spring-petclinic/spring-petclinic-rest
+**Backend of the client's application: ** https://github.com/spring-petclinic/spring-petclinic-rest
  
+ **Frontend of the client's application: ** https://github.com/spring-petclinic/spring-petclinic-angular
  
- 
-As a group of 5 individuals we would have to either use the tools we had been taught during our training such as **Terraform, Kubernetes, Ansible,Jenkins** or utilise other tools that would work in a similar fashion to these justifying why they would be the most preferable for deployment. 
+As a group of 5 individuals we would have to either use the tools we had been taught during our training such as **Terraform, Kubernetes, Ansible and Jenkins** or utilise other tools that would work in a similar fashion to these justifying why they would be the most preferable for deployment. 
 
 The deployment of this project would require automated building and re-deployment to testing and live environments upon any GitHub changes, whilst also keeping track of running costs.   
 
@@ -34,18 +34,18 @@ The deployment of this project would require automated building and re-deploymen
 + Utilising Docker to build images based on the applications
 + Containerising applications via Kubernetes 
 + Utilising Ansible for infrastructure configuration
-+ Deploying Jenkins for CI/CD with Github Webhooks integration 
++ Deploying Jenkins for CI/CD with Github Webhook integration 
 
 
 <a name="prerequisites"></a>
 ## Deployment Prerequisites
-A unix-machine with Terraform and Ansible installed along with subscription to a cloud provider. In this case the cloud provider used is Amazon Web Service (AWS), but this can be configured with any.
+A unix-machine with Terraform and Ansible installed along with subscription to a cloud provider. In this case the cloud provider used is Amazon Web Service (AWS), but this can be configured with any other provider.
 
 ### Terraform
-Terraform needs to be configured with a provider to manage resources. In this case a service principal is set up, allowing Terraform to connect to our AWS subscription with a aws access and secret access key.
+Terraform needs to be configured with a provider to manage resources. In this case a service principal is set up, allowing Terraform to connect to our AWS subscription with full AWS access and a secret access key.
 
 ### Ansible
-A Unix based system is required in order to run ansible (we used Ubuntu 18.04 LTS), and configure the virtual machines created by Terraform.
+A Unix based system is required in order to run Ansible (we used Ubuntu 18.04 LTS), and configure the virtual machines created by Terraform.
 
 <a name="planning"></a>
 ## Planning
@@ -55,17 +55,20 @@ As this is a group project composed of 5 members, there will need to be adequate
 Therefore, throughout the duration of this project we chose to employ **Scrum** as our project management framework. Unlike conventional methods of project planning, Scrum promotes and encourages teams to learn through experiences, self-organise and share ideas whilst working towards resolving a problem.
 
 
-To follow best practice within industry, we use a Kanban board to manage the project. We chose to use the Trello application to create my Kanban board, due to familiarity with the software, having seen it used at QA.
+To follow best practice within industry, we use a Kanban board to manage the project. We chose to use the Trello application to create the Kanban board, due to familiarity with the software.
 
-The board is designed around the continous deplyment and implementation of the application, along with other features needed for the specifics of the project (create this README file for example). These product backlogs are then further broken down in to a sprint backlog, tasks, progress, done and bugs list. These additional lists allow for dynamic progress updates of the project and to maintain specific obtainable objectives throughout the project to allow for a deliverable product by the deadline.
+The board is designed around the continous deployment and implementation of the application, along with other features needed for the specifics of the project. 
 
-We defined "done" as to mean that the feature had been successfully implemented into the application and had no negative effects.
-Any implemented feature that negatively effected the performance of the application were logged into the bugs column.
+The product backlogs also serve as user stories, which are then further broken down into the sprint backlog, a multitude of tasks, work in progress and done tasks. All these entries allow for dynamic progress update of the project as well as maintenance of the obtainable objectives in order to be able to deliver the final product by the deadline. The image below represents the Kanban board at the beginning of the project. 
+
+![Group-Trello-1](https://i.imgur.com/022Y2UG.png?1)
+
+We defined "done" as to mean that the feature had been successfully implemented into the application and had no negative effects.Any implemented feature that negatively effected the performance of the application were logged into the bugs column, which can be seen in the image below, representing the end of the project.  
 
 
+![Group-Trello-2](https://i.imgur.com/lbRDB87.png?1)
 
-Below shows the inital Scrum plan for this project, this was agreed apon by each group member and includes the start and finish dates of each of sprint.
-![Group-Trello-1](https://user-images.githubusercontent.com/61239212/80955909-0b58db80-8df8-11ea-8e24-bd4179dec16b.png)
+
 
 Throughout the course of the project we also had daily standups where we would inform eachother what we had been done, review what was left to do and make a suitable plan of action for that day, filling in the tasks we had discussed under each sprint as well as assigining the task to invdividuals.
 
