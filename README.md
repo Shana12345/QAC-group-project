@@ -182,6 +182,13 @@ The Kubernetes cluster has been created using Terraform in the testing and produ
 <a name="Frontend"></a>
 ## Frontend Testing
 
+[frontend1]:  https://i.imgur.com/k97xgf0.png
+
+![frontend1][frontend1]
+
+[frontend2]:  https://i.imgur.com/5prY8Jm.png
+
+![frontend2][frontend2]
 
 <a name="Coverage"></a>
 ## Coverage Report
