@@ -10,14 +10,23 @@
   * [Initial Risk Analysis](#InitialRisk)
   * [Final Risk Analysis](#FinalRisk)
   * [Risk Analysis Matrix](#RiskMatrix)
-* [Technologies Used](#Technology) 
-* [Environments ](#Environments)
+* [Architecture](#Architecture)
+  * [Feature Branch Model](#FeatureBranch)
+  * [Environments](#Environments)
+  * [Technologies Used](#Technology) 
 * [Testing](#Testing)
-* [Deployment Pipeline](#pipeline)
+  * [Front End Testing](#Frontend)
+  * [Back End Testing](#Backend)
+  * [Coverage Report](#Coverage)
 * [Deployment](#Deployment)
+  * [Deployment Pipeline](#Pipeline)
 * [Costs](#Costs) 
-* [Project Conclusion](#Conclusion) 
-* [Future Work](#FutureWork) 
+* [Retrospective](#Conclusion) 
+  * [What Went Well](#Good)
+  * [What Went Wrong](#Bad)
+  * [Future Improvements](#Improvements) 
+* [Installation Guide](#InstallationGuide)
+* [Authors](#Authors)
 
 <a name="Introduction"></a>
 ## Introduction 
@@ -60,8 +69,7 @@ As this is a group project composed of 5 members, there will need to be adequate
 
 Therefore, throughout the duration of this project we chose to employ **Scrum** as our project management framework. Unlike conventional methods of project planning, Scrum promotes and encourages teams to learn through experiences, self-organise and share ideas whilst working towards resolving a problem.
 
-
-To follow best practice within industry, we use a Kanban board to manage the project. We chose to use the Trello application to create the Kanban board, due to familiarity with the software.
+To follow best practice within industry, we use a Kanban board to manage the project. We chose to use the Trello application to create the Kanban board, due to familiarity with the software. The MoSCow Prioritisation Method has been used in order to identify key areas of development, thus allowing for a functional product to be presented as early as possible, increasing the complexity of the project once the minimum viable product is met.
 
 The board is designed around the continous deployment and implementation of the application, along with other features needed for the specifics of the project. 
 
@@ -116,96 +124,183 @@ The project started by creating an initial risk assessment as shown below. As th
 
 A risk matrix is a matrix that is used during the risk assessment process to define the level of risk by considering the category of probability or likelihood against the category of consequence severity. This is a simple mechanism to increase visibility of risks and assist management decision making.
 
-https://i.imgur.com/dgm9rDZ.png
+![Risk Assessment Matrix](https://i.imgur.com/dgm9rDZ.png)
 
-<a name="Technology"></a>
-## Technologies Used
-![Group-Tech-used](https://user-images.githubusercontent.com/61239212/80956449-2c6dfc00-8df9-11ea-89ff-aeed05e1f977.png)
+
+<a name="Architecture"></a>
+## Architecture
+
+<a name="FeatureBranch"></a>
+## Feature Branch Model
+The project consists of 7 branches, to ensure code quality across the duration of the project. As this is a group project, it has been decided that each member would have their own branch, as shown in the image below. The developer branch has been kept alongside the master branch for any last minute changes, when the members' branches are all merged into it. 
+
+![Feature Branch Model](https://i.imgur.com/QMEGqRH.png)
+
+All the branches presented above have now been merged into the master branch, ready for the delivery of the project. 
 
 
 <a name="Environments"></a>
 ## Environments
-In this project we used multiple environments and tools to test, build and deploy the applications, the tools are listed below:
+In this project we used multiple environments and tools to test, build and deploy the applications. The image below shows the initial deployment diagram we started building the project around. We have decided to have Terraform and Ansible installed on the local machine, a Jenkins server on AWS platform, and the EKS cluster on AWS. 
 
-[architecture]: https://i.imgur.com/MWmSKn9.png
+![Initial Diagram](https://i.imgur.com/uidsHny.png)
 
-![architecture][architecture]
+As the project started progressing, the diagram changed shape to a closer representation of the project. This can be seen in the image below. 
 
-- Terraform
+![Final Diagram](https://i.imgur.com/MWmSKn9.png)
 
-Terraform was used to create our deployment infrastructure as code, in this case to create two environements; Staging and Production. In Terrafform each environment is identical but is tagged as Production and Staging. The environments have 1 Kubernetes Cluster and all it dependencies, 1 VM for controlling the clusters using Kubectl and testing the app and finally a Jenkins CI/CD server which executes the pipeline by building, testing and deploying the application on the K8 cluster.
+Terraform was used to create our deployment infrastructure as code, in this case to create two environements: Staging and Production. The environments have 1 Kubernetes Cluster and all its dependencies, 1 Virtual Machine for controlling the clusters using kubernetes commands and testing the application, and finally a Jenkins CI/CD server which executes the pipeline by building, testing and deploying the application on the Kubernetes cluster.
 
-We chose Terraform as it lets you write infrastructure as code, the infrastructure configurations can be versioned and maintained, so if another environment needs to be created, you can be sure that you are using the latest configurations which avoids environment drift.
+We chose Terraform as it allows us write infrastructure as code in a quicker and easier manner than using the conventional way. The infrastructure configurations can be versioned and maintained, so if another environment needs to be created, you can ensure the latest configurations are used, thus avoiding environment drift.
 
- ***** Setup files can be found in the Terraform Folder *****
+Ansible was used to provision and configure the dependencies required to test and build our application on our remote hosts. This has been done so that our app could be deployed seamlessly after Terrafform creates the infrastructure needed. We created multiple custom roles inside Ansible that install Docker, install the dependencies our application needs, configure Jenkins and more.
 
-- Ansible
+We chose Ansible for this project as it is a very useful automation tool that lets you configure, manage and deploy applications. It can easily configure Windows machines as well as Linux machines, the YAML language is easy to read and understand and gives a clear view of the process. 
 
-Ansible was used to provision and configure the dependencies required to test and build our application on our remote hosts, this was done so that our app could be deployed seamlessly after Terrafform creates the infrastructure that we need. We created multiple custom roles inside Ansible that; install Docker, Install the applications our app needs to work, configure Jenkins and more.
+The Kubernetes cluster has been created using Terraform in the testing and production environments. Kubernetes helped deploy the application containers and was used because it is able to manage, scale and deploy large applications.
 
-We chose Ansible for this project as it is a very useful automation tool that lets you configure manage and deploy applications, also can configure Windows machines as well as Linux machines, YAML is easy to read and understand and gives you a clear view of what is happening, Ansible is also agentless and doesn’t need any extra configuration and comes with all the features ready to use out the box.
+<a name="Technology"></a>
+## Technologies Used
 
+| Technology       |  Description    |
+|:-------------:|:------------------:|
+| GitHub    | Due to familiarity, cost and ease of access, the group decided to use GitHub to aid with the version control of the application. It also provides ease when integrating with the deployment pipeline, allowing us to seamlessly apply changes and implement them.  | 
+| Docker | Used to create an image of the front end application. |
+| Terraform | Enables us to create the base infrastructure and configure virtual machines for Jenkins and Kubernetes. |
+| Ansible | Allows us to provision, manage and automate the deployment of containers across nodes. |
+| Jenkins | Used to implement continuous integration within our application. Used alongside GitHub to implement the pipeline. |
+| Kubernetes | Used to create multiple nodes that will manage, scale and run the final application. |
 
-***** Setup files can be found in the following dir -> terraform/ansible
-
-- Kubernetes
-
-Our Kubernetes cluster was created using Terraform and this was done in the testing and production environments. Kubernetes helped us deploy our application containers and was used because it is easily able to manage, scale and deploy large applications. It is also very easy to use with Azure and other cloud providers. 
-
-***** Setup files can be found in the following dir -> terraform/kubernetes-cluster
 
 <a name="Testing"></a>
-
-######################################### Edit this for our case once the testing is done ########################################################
 ## Testing
 
 
-Things to add to the test sectrion:
-1. backent testing
-2. frontend testing
-3. And requirements for both of them
-4. Add coverage
-#################################################################################
+<a name="Backend"></a>
+## Backend Testing Logs
 
+[backend1]: https://i.imgur.com/uJ8MyA1.png
 
+![backend1][backend1]
 
-<a name="pipeline"></a>
-## Deployment Pipeline
+<a name="Frontend"></a>
+## Frontend Testing Logs
 
-[deployment]: https://i.imgur.com/NM5hLSI.png
+[frontend1]:  https://i.imgur.com/k97xgf0.png
 
-![deployment][deployment]
+![frontend1][frontend1]
+
+[frontend2]:  https://i.imgur.com/5prY8Jm.png
+
+![frontend2][frontend2]
+
 
 
 <a name="Deployment"></a>
 ## Deployment
 
-We used Terraform to create the infrastructure (VM's and Kubernetes Cluster) after this process we used Ansible to go into the VM's we  created and install all the applications we would need for the project to work e.g Jenkins, Java, Python, Docker, Maven. After running Ansible we then trigger the build process which is running on our Jenkins CI/CD server, this tests the application and if the tests pass the deployment stage is triggered and the application is deployed to the Kubernetes Cluster on Azure. See video Below for more info.
 
+The App was deployed using Ansible,Jenkins and Nginx.
 
+ + Ansible Configuration Management tool is used to install the dependencies onto the Jenkins server by deploying Ansible Playbook
++ This prevents human error as ansible is a configuration management tool therefore, it deploys the same software to as many worker nodes automatically without installing them manually which not only saves time but also prevents human error.
++ Jenkins server updates kubeconfig for EKS Cluster and deploys Kubernetes where the pods are created.
++ Nginx then conducts a Reverse Proxy into Frontend.
+
+Below is the diagram demonstrating the **Deployment Process**:
+
+[deployment]:  https://i.imgur.com/22uffu5.png
+
+![deployment][deployment]
+
+<a name="Pipeline"></a>
+## Deployment Pipeline
+
+As previously mentioned, Terraform has been used to create the infrastructure. The next step was to use Ansible to install all the dependencies on the Virtual Machines. The build process is then triggered, Jenkins starts, tests the application and if the test succeeds, the deployment stage of the pipeline is triggered. The application would then be deployed on the Kubernetes cluster within AWS. 
+
+![deployment](https://i.imgur.com/NM5hLSI.png)
 
 
 <a name="Costs"></a>
 ## Costs
-We used Pricing Calculator to configure and estimate the monthly running costs for the AWS products that we need to automate the deployment of the application. We decided that we need 2 VMs and the AWS Kubernetes Service, we used eu-west-2 as region because that’s what we found available according to the subscription that we were using and we came to the conclusion that we would have an operational expenditure of £32.82 plus 0.01USD per hour to run terraform, paying only for what we are using with no upfront costs for the services.
-![Group-Cost](https://user-images.githubusercontent.com/61239212/80957894-fb42fb00-8dfb-11ea-9012-7492fdb57d4d.png)
+We used Pricing Calculator to configure and estimate the monthly running costs for the AWS services used. We have decided we needed 2 Virtual Machines and the AWS Kubernetes Service. The application has been deployed in the eu-west-3 region, meaning that the virtual resources we have used are based in Paris, Europe. We have been allocated a budget of £20 at the beginning of the project however, as the time went on, we have spent a very small amount of the allocated budget. The cost had been minimised by stopping the resources at the end of each working day and by setting up a billing alert when the cost increased to more than £5. 
 
+![Pricing](https://i.imgur.com/nE7eKnb.png)
+
+The initial estimate came to just under £5 for the 9 days we had allocated for the project, for 8 hours a day, thus the low limit of the billing alert. The cost has been calculated based on the use of only two t2.medium instances, however another two t2.small instances have been used. The final cost has not reached the billing alert across the team, and therefore we believed we have delivered a very cost efficient solution.   
 
 
 <a name="Conclusion"></a>
-## Project Conclusion
+## Retrospective
 
-What went well:
+<a name="Good"></a>
+## What went well
 * Using terraform to create the infrastructure went swiftly without many issues. 
 * Team meetings were helpful and orientating.
-* ADD SOMETHING ELSE
+* Good team communication throughout the duration of the project. 
+* Created the Ansible and Jenkins files without much difficulty.
+* Delivered a cost efficient solution.
 
-What went wrong:
-* Running the frontend application came with some issues that requiered the help of our instructor.
-* Creating pods for the cluster took some extra time.
+<a name="Bad"></a>
+## What went wrong
+* Running the frontend application came with some issues that requiered the help of our trainer.
+* Creating the pods for the cluster took longer than expected.
+* Issues when using the AWS free tier service, so had to pay for running the simple Virtual Machines. 
+* The backend and frontend of the application not communicating, wasted a lot of time on trying to fix the issue. 
 
-Future improvements:
-* A more detail examination of the costs.
-* ADD SOMETHING ELSE. 
+<a name="Improvements"></a>
+## Future improvements
+* Add the CloudWatch alert.
+* Implement the Lambda function to take daily snapshots.
+* XRay to be implemented on the spring application so we can monitor the API level request.
+* CodePipeline as a serverless solution and replace Jenkins.
+
+A Future Sprint has been displayed on the Trello Board below:
+
+[future]:  https://i.imgur.com/YT2bohn.png?1
+
+![future][future]
 
 
+<a name="InstallationGuide"></a>
+## Installation Guide
+## Pre-requisites
+* AWS account
+* AWS CLI account
+* Terraform knowledge
+* Kubernetes knowledge
+
+## Steps
+* Clone the project from this repository using the git clone command. 
+* Log in to you AWS account. 
+* Create an AWS .pem key, if you don't already have one. This needs to be created in the same region as the one you intend to deploy your project, in this case it would be in the eu-west-3 region.
+* Log in on the terminal using your AWS CLI account. 
+* Using [this](https://learn.hashicorp.com/terraform/getting-started/install.html) link, install terraform on your local machine.
+*	Navigate into the terraform folder within this repository. Run terraform init to initialize a working directory containing Terraform configuration files.
+*	Run the terraform plan command to verify the integrity of the code.
+*	If no errors show up, use the command terraform apply to build the infrastructure. This will last around 10 minutes.
+*	Navigate to the ansible folder within this repository and run the ansible playbook to install dependencies onto Jenkins server.
+*	Navigate to AWS web console and shh into the Jenkins server that has been created via terraform.
+*	Run sudo su jenkins command
+*	Run aws configure
+*	Input your Access_key and Secret Access key here (Remember IAM user to have EKS full access)
+*	Manually create kubeconfig file and add the following for the cluster:
+    1.  endpoint-url
+    2.	base64-encoded-ca-cert
+    3.	cluster-name (Follow this [link]( https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html) for further guidance)
+*	Update kubeconfig for the cluster
+*	Get the IP address of the server you're on.
+*	Open a web browser and paste it on the address bar with :8080 at the end of the URL.
+*	Log into Jenkins.
+* Install plugins and sign up to Jenkins as directed.
+*	Run the Jenkins Pipeline and Press build. This should deploy the Kubernetes automatically and create pods to deploy the app.
+
+
+
+<a name="Authors"></a>
+## Authors
+* [Nicolas Abadi](https://github.com/nic116)
+* [Adelina Bronda](https://github.com/Adelina09)
+* [Shana Charlery](https://github.com/Shana12345)
+* [Finn Macrae](https://github.com/Finn969) 
+* [Hifza Zaheer](https://github.com/HifzaZaheer96)
