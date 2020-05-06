@@ -26,6 +26,7 @@
   * [What Went Wrong](#Bad)
   * [Future Improvements](#Improvements) 
 * [Installation Guide](#InstallationGuide)
+* [Authors](#Authors)
 
 <a name="Introduction"></a>
 ## Introduction 
@@ -240,3 +241,10 @@ We used Pricing Calculator to configure and estimate the monthly running costs f
 ## Installation Guide
 
 
+<a name="Authors"></a>
+## Authors
+* [Nicolas Abadi](https://github.com/nic116)
+* [Adelina Bronda](https://github.com/Adelina09)
+* [Shana Charlery](https://github.com/Shana12345)
+* [Finn Macrae](https://github.com/Finn969) 
+* [Hifza Zaheer](https://github.com/HifzaZaheer96)
