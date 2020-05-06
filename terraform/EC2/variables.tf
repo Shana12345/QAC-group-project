@@ -12,9 +12,10 @@ variable "ami_id" {
 }
 
 variable "t2_micro" {
+  #chanche this into a medium
   default = "t2.micro"
 }
 
 variable "key_name" {
-  default = "hifza-zaheer"
+  default = "nic1"
 }

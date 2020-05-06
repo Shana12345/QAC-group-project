@@ -1,5 +1,6 @@
 provider "aws" {
   region                  = "eu-west-3"
+ 
   shared_credentials_file = "~/.aws/credentials"
   version                 = "~> 2.0"
 
@@ -25,6 +26,4 @@ module "EC2" {
   source = "./EC2"
   aws_subnetsEC2= "${module.aws_vpc.subnet1}"
   sg= ["${module.aws_sg.aws_sg}"]
-  
 }
-
