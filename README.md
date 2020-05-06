@@ -62,8 +62,7 @@ As this is a group project composed of 5 members, there will need to be adequate
 
 Therefore, throughout the duration of this project we chose to employ **Scrum** as our project management framework. Unlike conventional methods of project planning, Scrum promotes and encourages teams to learn through experiences, self-organise and share ideas whilst working towards resolving a problem.
 
-
-To follow best practice within industry, we use a Kanban board to manage the project. We chose to use the Trello application to create the Kanban board, due to familiarity with the software.
+To follow best practice within industry, we use a Kanban board to manage the project. We chose to use the Trello application to create the Kanban board, due to familiarity with the software. The MoSCow Prioritisation Method has been used in order to identify key areas of development, thus allowing for a functional product to be presented as early as possible, increasing the complexity of the project once the minimum viable product is met.
 
 The board is designed around the continous deployment and implementation of the application, along with other features needed for the specifics of the project. 
 
