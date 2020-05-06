@@ -21,6 +21,7 @@ pipeline{
                 sh 'chmod +x ./Script/*'
                 sh 'echo "backend testing"'
                 sh './Script/tests-back.sh'
+
             }
         }
 
@@ -32,6 +33,7 @@ pipeline{
                 sh 'chmod +x ./Script/*'
                 sh 'echo "frontend testing"'
                 sh './Script/tests-front.sh'
+
             }
         }
 
@@ -43,6 +45,7 @@ pipeline{
                 sh 'chmod +x ./Script/*'
                 sh 'echo "Begin Deployment!"'
                 sh './Script/deployment.sh'
+                sh './Script/deployment2.sh'
                 sh 'echo "Deployment Complete!"'
             }
         }

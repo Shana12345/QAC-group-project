@@ -177,19 +177,42 @@ The Kubernetes cluster has been created using Terraform in the testing and produ
 
 
 <a name="Backend"></a>
-## Backend Testing
+## Backend Testing Logs
+
+[backend1]: https://i.imgur.com/uJ8MyA1.png
+
+![backend1][backend1]
 
 <a name="Frontend"></a>
-## Frontend Testing
+## Frontend Testing Logs
 
+[frontend1]:  https://i.imgur.com/k97xgf0.png
 
-<a name="Coverage"></a>
-## Coverage Report
+![frontend1][frontend1]
+
+[frontend2]:  https://i.imgur.com/5prY8Jm.png
+
+![frontend2][frontend2]
 
 
 
 <a name="Deployment"></a>
 ## Deployment
+
+
+
+The App was deployed using Ansible,Jenkins and Nginx.
+
+ + Ansible Configuration Management tool is used to install the dependencies onto the Jenkins server by deploying Ansible Playbook
++ This prevents human error as ansible is a configuration management tool therefore, it deploys the same software to as many worker nodes automatically without installing them manually which not only saves time but also prevents human error.
++ Jenkins server updates kubeconfig for EKS Cluster and deploys Kubernetes where the pods are created.
++ Nginx then conducts a Reverse Proxy into Frontend.
+
+Below is the diagram demonstrating the **Deployment Process**:
+
+[deployment]:  https://i.imgur.com/22uffu5.png
+
+![deployment][deployment]
 
 <a name="Pipeline"></a>
 ## Deployment Pipeline
@@ -202,6 +225,7 @@ As previously mentioned, Terraform has been used to create the infrastructure. T
 <a name="Costs"></a>
 ## Costs
 We used Pricing Calculator to configure and estimate the monthly running costs for the AWS services used. We have decided we needed 2 Virtual Machines and the AWS Kubernetes Service. The application has been deployed in the eu-west-3 region, meaning that the virtual resources we have used are based in Paris, Europe. We have been allocated a budget of £20 at the beginning of the project however, as the time went on, we have spent a very small amount of the allocated budget. The cost had been minimised by stopping the resources at the end of each working day and by setting up a billing alert when the cost increased to more than £5. 
+
 
 ![Pricing](https://i.imgur.com/nE7eKnb.png)
 
@@ -233,6 +257,14 @@ The initial estimate came to just under £5 for the 9 days we had allocated for 
 * XRay to be implemented on the spring application so we can monitor the API level request.
 * CodePipeline as a serverless solution and replace Jenkins.
 
+
+A Future Sprint has been displayed on the Trello Board below:
+
+[future]:  https://i.imgur.com/YT2bohn.png?1
+
+![future][future]
+
+
 <a name="InstallationGuide"></a>
 ## Installation Guide
 ## Pre-requisites
@@ -247,8 +279,25 @@ The initial estimate came to just under £5 for the 9 days we had allocated for 
 * Create an AWS .pem key, if you don't already have one. This needs to be created in the same region as the one you intend to deploy your project, in this case it would be in the eu-west-3 region.
 * Log in on the terminal using your AWS CLI account. 
 * Using [this](https://learn.hashicorp.com/terraform/getting-started/install.html) link, install terraform on your local machine.
-* Navigate into the terraform folder within this repository. Run the terraform plan command to verify the integrity of the code. 
-* If no errors show up, use the command terraform apply to build the infrastructure. This will last around 10 minutes. 
+
+*	Navigate into the terraform folder within this repository. Run terraform init to initialize a working directory containing Terraform configuration files.
+*	Run the terraform plan command to verify the integrity of the code.
+*	If no errors show up, use the command terraform apply to build the infrastructure. This will last around 10 minutes.
+*	Navigate to the ansible folder within this repository and run the ansible playbook to install dependencies onto Jenkins server.
+*	Navigate to AWS web console and shh into the Jenkins server that has been created via terraform.
+*	Run sudo su jenkins command
+*	Run aws configure
+*	Input your Access_key and Secret Access key here (Remember IAM user to have EKS full access)
+*	Manually create kubeconfig file and add the following for the cluster:
+    1.  endpoint-url
+    2.	base64-encoded-ca-cert
+    3.	cluster-name (Follow this [link]( https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html) for further guidance)
+*	Update kubeconfig for the cluster
+*	Get the IP address of the server you're on.
+*	Open a web browser and paste it on the address bar with :8080 at the end of the URL.
+*	Log into Jenkins.
+* Install plugins and sign up to Jenkins as directed.
+*	Run the Jenkins Pipeline and Press build. This should deploy the Kubernetes automatically and create pods to deploy the app.
 
 
 
