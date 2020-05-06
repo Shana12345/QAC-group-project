@@ -114,6 +114,9 @@ The project started by creating an initial risk assessment as shown below. As th
 <a name="RiskMatrix"></a>
 ## Risk Analysis Matrix
 
+A risk matrix is a matrix that is used during the risk assessment process to define the level of risk by considering the category of probability or likelihood against the category of consequence severity. This is a simple mechanism to increase visibility of risks and assist management decision making.
+
+https://i.imgur.com/dgm9rDZ.png
 
 <a name="Technology"></a>
 ## Technologies Used
