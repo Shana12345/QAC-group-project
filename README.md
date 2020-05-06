@@ -21,9 +21,9 @@
 + Deploying frontend (Angular js) and backend (Restful API) applications.
 + The general outline of this project was to use all the concepts learnt out to this point, design and implement a solution for automating the deployments and development workflows for the projects that is linked below: 
  
-**Backend of the client's application: ** https://github.com/spring-petclinic/spring-petclinic-rest
+**Backend of the client's application:** https://github.com/spring-petclinic/spring-petclinic-rest
  
- **Frontend of the client's application: ** https://github.com/spring-petclinic/spring-petclinic-angular
+ **Frontend of the client's application:** https://github.com/spring-petclinic/spring-petclinic-angular
  
 As a group of 5 individuals we would have to either use the tools we had been taught during our training such as **Terraform, Kubernetes, Ansible and Jenkins** or utilise other tools that would work in a similar fashion to these justifying why they would be the most preferable for deployment. 
 
@@ -69,10 +69,8 @@ We defined "done" as to mean that the feature had been successfully implemented 
 ![Group-Trello-2](https://i.imgur.com/lbRDB87.png?1)
 
 
+Throughout the duration of the project the group had daily standup meetings where we would inform each other what we have been working on, review what was left to do and make a suitable plan of action for the rest of the day, filling in the tasks we had discussed under each sprint, as well as assigining new tasks to invdividuals.
 
-Throughout the course of the project we also had daily standups where we would inform eachother what we had been done, review what was left to do and make a suitable plan of action for that day, filling in the tasks we had discussed under each sprint as well as assigining the task to invdividuals.
-
-![Planning]########################   Add last trello
 
 
 ## Initial Design Plan
