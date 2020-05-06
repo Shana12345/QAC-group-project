@@ -2,10 +2,14 @@
 
 ## Contents 
 * [Introduction](#Introduction)  
+  * [Project Brief](#Brief)
+  * [Our Solution](#Solution)
 * [Deployment Pretequisites](#prerequisites)
 * [Planning](#planning)
-* [Use Cases](#UserCases)
 * [Risk Analysis](#Risk) 
+  * [Initial Risk Analysis](#InitialRisk)
+  * [Final Risk Analysis](#FinalRisk)
+  * [Risk Analysis Matrix](#RiskMatrix)
 * [Technologies Used](#Technology) 
 * [Environments ](#Environments)
 * [Testing](#Testing)
@@ -17,18 +21,20 @@
 
 <a name="Introduction"></a>
 ## Introduction 
+<a name="Brief"></a>
 ### Project Brief
 + Deploying frontend (Angular js) and backend (Restful API) applications.
 + The general outline of this project was to use all the concepts learnt out to this point, design and implement a solution for automating the deployments and development workflows for the projects that is linked below: 
  
 **Backend of the client's application:** https://github.com/spring-petclinic/spring-petclinic-rest
  
- **Frontend of the client's application:** https://github.com/spring-petclinic/spring-petclinic-angular
+**Frontend of the client's application:** https://github.com/spring-petclinic/spring-petclinic-angular
  
 As a group of 5 individuals we would have to either use the tools we had been taught during our training such as **Terraform, Kubernetes, Ansible and Jenkins** or utilise other tools that would work in a similar fashion to these justifying why they would be the most preferable for deployment. 
 
 The deployment of this project would require automated building and re-deployment to testing and live environments upon any GitHub changes, whilst also keeping track of running costs.   
 
+<a name="Solution"></a>
 ### Our Solution:
 + Deploying infrastructure including EKS Cluster and Jenkins Server via Terraform
 + Utilising Docker to build images based on the applications
@@ -74,14 +80,21 @@ Throughout the duration of the project the group had daily standup meetings wher
 
 <a name="Risk"></a>
 ## Risk Analysis 
+
+<a name="InitialRisk"></a>
+## Initial Risk Analysis
+The project started by creating an initial risk assessment as shown below. As the project went on, new risks started appearing as well as current risks changing their likelyhood of occurrence at it got closer to the end of the project.
+
 | Risk ID       | Risk Description   | Mitigation     | Likelyhood of occurrence |  Possible Impact  | Impact at occurrence| 
 |:-------------:|:------------------:|:--------------:|:------------------------:|:-----------------:|:-------------------:|
 | 1    | Unstable internet connection | Work on the project during early hours, avoid working on the online parts of the project late at night, as it has been observed that this is when the internet connection is slowest. If the connection is constantly unstable, attempt to hot-spot from a 4G network to your laptop. | 4 | Not being able to deliver parts of the project in the desired time. Slowing down the team, and hence having a delaying impact upon the project deadline. | 5|
 | 2    | Data compromised on the workstations | Make frequent back ups of the project and ensure computer is locked when leaving the station unattended. Ensure version controlling any changes at the end of each day.  | 2 | Having to start the project/parts of the project from scratch, missing out on possible crucial information previously included. | 3|
 | 3    | Security breach of the main AWS account | Ensure a strong password is selected, encrypt the data and set up strong firewall rules.  | 2 | Having to re-create the entire architecture from scratch, not being able to present much on the day. Potentially extremely high impact, especially if combined with data being compromised on the workstations. | 5|
 | 4    | Using up the free tier resources  | Ensure the instances are swithched off at the end of the day, do not leave anything running overnight, and make sure you thoroughly check for any missed instances before logging off for the day.  Ensure the billing alert is set to alert you whenever a certain amount of money is spent. Although we have an allowence, it is advised we do not overuse it.  | 5 | Being charged, and not being able to pay the money back if a certain amount of resources are used for a long period of time.  | 4 |
-| 5    | Difficulty understanding the material  | Pay attention to the material taught on a daily basis. Follow up on the supplemental materials provided, and practice when given the opportunity. Keep on top of the work by using the video tutorials and the courseware. | 3 | Delivering a poor project due to not understanding the brief/ not knowing how to execute the project. | 4|
-| 6    | Not being able to complete the project in time | Keeping track of the project management timeline using the Trello board, making sure to complete/start at least a task daily.  | 2 | Falling behind with the weekly tasks, randomly working on different other parts of the project, not boxing off particular sections of it, hence not meeting the agile principles. | 5|
+| 5    | Falling Ill  | Work from home, do not leave the house unless necessary. If the house has been left, ensure hands are thoroughly washed upon return.  | 4 | Not being able to work, lacking focus, potentially getting admitted into hospital, and therefore not being able to deliver a project. | 5|
+| 6    | Not getting along with the other teammates | Ensure communication throughout the team at all times, if there is something that the teammates do not agree upon, it should be discussed as a group and resolved immediately, avoiding future conflict.  | 1 | Not being able to work as a team. Working individually, creating unnecessary tension and making it a stressful environment to be working in.  | 4|
+| 7    | Difficulty understanding the material  | Make use of all the resources and of the daily scrum meetings. Ask questions all the time, do not be afraid to ask the teammates for help when needed.   | 4 | Struggling to deliver your part of the project and hence dragging te team down.   | 3|
+| 8    | Not understanding the project brief | Always ask questions. Make sure you are on the same page as your team mates when it comes to the objective of the project. Constant checks such as daily scrum meetings help keep in contact and making sure everyone  understands their brief | 4 | Delivering something unrelated to the task you were given, hence potentially costing the team precious time by having to re-build it.  | 3|
 
 
 
