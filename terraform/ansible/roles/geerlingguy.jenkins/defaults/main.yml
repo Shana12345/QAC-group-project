@@ -1,4 +1,3 @@
----
 # Optional method of pinning a specific version of Jenkins and/or overriding the
 # default Jenkins packaging URL.
 # jenkins_version: "1.644"

@@ -8,10 +8,74 @@
 - name: Setup Jenkins server
   hosts: jenkins
   become: true
+
+  vars:
+    jenkins_version: "2.191"
+    jenkins_plugins_state: latest
+    jenkins_plugins_install_dependencies: true
+    jenkins_plugins:  
+      - git
+      - workflow-aggregator
+      - pipeline-github-lib
+      - pipeline-stage-view
+      - github-branch-source
+      - workflow-scm-step
+      - mailer
+      - ssh-credentials
+      - credentials
+      - scm-api
+      - git-client
+      - workflow-step-api
+      - structs
+      - lockable-resources
+      - pipeline-rest-api
+      - workflow-job
+      - jquery-detached
+      - workflow-api
+      - momentjs
+      - handlebars
+      - jackson2-api
+      - github
+      - github-api
+      - workflow-cps-global-lib
+      - display-url-api
+      - workflow-support
+      - workflow-cps
+      - git-server
+      - cloudbees-folder
+      - apache-httpcomponents-client-4-api
+      - jsch
+      - ace-editor
+      - pipeline-stage-step
+      - pipeline-graph-analysis
+      - pipeline-input-step
+      - matrix-project
+      - junit
+      - plain-credentials
+      - token-macro
+      - workflow-basic-steps
+      - workflow-durable-task-step
+      - pipeline-build-step
+      - pipeline-model-definition
+      - workflow-multibranch
+      - pipeline-milestone-step
+      - branch-api
+      - durable-task
+      - pipeline-stage-tags-metadata
+      - docker-workflow
+      - pipeline-model-extensions
+      - credentials-binding
+      - pipeline-model-api
+      - pipeline-model-declarative-agent
+      - docker-commons
+      - authentication-tokens
+
+    
   roles:
     - jenkins # Install git so it can call the repo, and Java which jenkins depends on.
     - geerlingguy.jenkins # Install Jenkins
     - kubectl # Install kubectl (based on aws instructions at https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+    - apprequirements # Install requirements to run tests on the app
   tasks:
   - name: configuring jenkins user
     command: sudo usermod -aG sudo jenkins
