@@ -1,10 +1,10 @@
-target/*
+#target/*
 .settings/*
 .classpath
 .project
 .idea
 *.iml
-/target
+#/target
 
 generated/
 
