@@ -12,14 +12,17 @@
   * [Risk Analysis Matrix](#RiskMatrix)
 * [Architecture](#Architecture)
   * [Feature Branch Model](#FeatureBranch)
+  * [Environments](#Environments)
   * [Technologies Used](#Technology) 
-  * [Environments ](#Environments)
+
 * [Testing](#Testing)
 * [Deployment Pipeline](#pipeline)
 * [Deployment](#Deployment)
 * [Costs](#Costs) 
-* [Project Conclusion](#Conclusion) 
-* [Future Work](#FutureWork) 
+* [Retrospective](#Conclusion) 
+  * [What Went Well](#Good)
+  * [What Went Wrong](#Bad)
+  * [Future Work](#FutureWork) 
 
 <a name="Introduction"></a>
 ## Introduction 
@@ -132,6 +135,26 @@ The project consists of 7 branches, to ensure code quality across the duration o
 All the branches presented above have now been merged into the master branch, ready for the delivery of the project. 
 
 
+<a name="Environments"></a>
+## Environments
+In this project we used multiple environments and tools to test, build and deploy the applications. The image below shows the initial deployment diagram we started building the project around. We have decided to have Terraform and Ansible installed on the local machine, a Jenkins server on AWS platform, and the EKS cluster on AWS. 
+
+![Initial Diagram](https://i.imgur.com/uidsHny.png)
+
+As the project started progressing, the diagram changed shape to a closer representation of the project. This can be seen in the image below. 
+
+![Final Diagram](https://i.imgur.com/MWmSKn9.png)
+
+Terraform was used to create our deployment infrastructure as code, in this case to create two environements: Staging and Production. The environments have 1 Kubernetes Cluster and all it dependencies, 1 Virtual Machine for controlling the clusters using kubernetes commands and testing the application, and finally a Jenkins CI/CD server which executes the pipeline by building, testing and deploying the application on the Kubernetes cluster.
+
+We chose Terraform as it allows us write infrastructure as code in a quicker and easier manner than using the conventional way. The infrastructure configurations can be versioned and maintained, so if another environment needs to be created, you can ensure the latest configurations are used, thus avoiding environment drift.
+
+Ansible was used to provision and configure the dependencies required to test and build our application on our remote hosts. This has been done so that our app could be deployed seamlessly after Terrafform creates the infrastructure needed. We created multiple custom roles inside Ansible that install Docker, install the dependencies our application needs, configure Jenkins and more.
+
+We chose Ansible for this project as it is a very useful automation tool that lets you configure, manage and deploy applications. It can easily configure Windows machines as well as Linux machines, the YAML language is easy to read and understand and gives a clear view of the process. 
+
+The Kubernetes cluster has been created using Terraform in the testing and production environments. Kubernetes helped deploy the application containers and was used because it is able to manage, scale and deploy large applications.
+
 <a name="Technology"></a>
 ## Technologies Used
 
@@ -146,36 +169,6 @@ All the branches presented above have now been merged into the master branch, re
 
 
 
-<a name="Environments"></a>
-## Environments
-In this project we used multiple environments and tools to test, build and deploy the applications, the tools are listed below:
-
-[architecture]: https://i.imgur.com/MWmSKn9.png
-
-![architecture][architecture]
-
-- Terraform
-
-Terraform was used to create our deployment infrastructure as code, in this case to create two environements; Staging and Production. In Terrafform each environment is identical but is tagged as Production and Staging. The environments have 1 Kubernetes Cluster and all it dependencies, 1 VM for controlling the clusters using Kubectl and testing the app and finally a Jenkins CI/CD server which executes the pipeline by building, testing and deploying the application on the K8 cluster.
-
-We chose Terraform as it lets you write infrastructure as code, the infrastructure configurations can be versioned and maintained, so if another environment needs to be created, you can be sure that you are using the latest configurations which avoids environment drift.
-
- ***** Setup files can be found in the Terraform Folder *****
-
-- Ansible
-
-Ansible was used to provision and configure the dependencies required to test and build our application on our remote hosts, this was done so that our app could be deployed seamlessly after Terrafform creates the infrastructure that we need. We created multiple custom roles inside Ansible that; install Docker, Install the applications our app needs to work, configure Jenkins and more.
-
-We chose Ansible for this project as it is a very useful automation tool that lets you configure manage and deploy applications, also can configure Windows machines as well as Linux machines, YAML is easy to read and understand and gives you a clear view of what is happening, Ansible is also agentless and doesn’t need any extra configuration and comes with all the features ready to use out the box.
-
-
-***** Setup files can be found in the following dir -> terraform/ansible
-
-- Kubernetes
-
-Our Kubernetes cluster was created using Terraform and this was done in the testing and production environments. Kubernetes helped us deploy our application containers and was used because it is easily able to manage, scale and deploy large applications. It is also very easy to use with Azure and other cloud providers. 
-
-***** Setup files can be found in the following dir -> terraform/kubernetes-cluster
 
 <a name="Testing"></a>
 
@@ -216,7 +209,7 @@ We used Pricing Calculator to configure and estimate the monthly running costs f
 
 
 <a name="Conclusion"></a>
-## Project Conclusion
+## Retrospective
 
 What went well:
 * Using terraform to create the infrastructure went swiftly without many issues. 
