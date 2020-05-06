@@ -18,7 +18,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 1     
+  replicas: 1      
   selector:
     matchLabels:
       app: frontend
@@ -30,7 +30,6 @@ spec:
       hostname: frontend
       containers:
       - name: frontend
-        image: adelina09/frontend:first
+        image: amranlab/frontend
         ports:
         - containerPort: 4200
-      

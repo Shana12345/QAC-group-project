@@ -31,7 +31,7 @@ resource "aws_eks_node_group" "group-project" {
   node_group_name = "Nodes"
   node_role_arn   = aws_iam_role.nodes.arn
   subnet_ids         = var.aws_subnets
-  instance_types  = ["t2.micro"]
+  instance_types  = ["t2.medium"]
   # source_security_group_ids = [aws_security_group.group-project.id]
 
   scaling_config {
@@ -122,3 +122,36 @@ resource "aws_iam_instance_profile" "nodes" {
   name = "terraform-eks-demo"
   role = aws_iam_role.nodes.name
 }
+
+
+############################################################################
+# resource "aws_iam_role" "example" {
+#   name = "eks-node-group-example"
+
+#   assume_role_policy = jsonencode({
+#     Statement = [{
+#       Action = "sts:AssumeRole"
+#       Effect = "Allow"
+#       Principal = {
+#         Service = "ec2.amazonaws.com"
+#       }
+#     }]
+#     Version = "2012-10-17"
+#   })
+# }
+
+# resource "aws_iam_role_policy_attachment" "example-AmazonEKSWorkerNodePolicy" {
+#   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+#   role       = aws_iam_role.example.name
+# }
+
+# resource "aws_iam_role_policy_attachment" "example-AmazonEKS_CNI_Policy" {
+#   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+#   role       = aws_iam_role.example.name
+# }
+
+# resource "aws_iam_role_policy_attachment" "example-AmazonEC2ContainerRegistryReadOnly" {
+#   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+#   role       = aws_iam_role.example.name
+# }
+############################################################################################
