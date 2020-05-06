@@ -14,10 +14,12 @@
   * [Feature Branch Model](#FeatureBranch)
   * [Environments](#Environments)
   * [Technologies Used](#Technology) 
-
 * [Testing](#Testing)
-* [Deployment Pipeline](#pipeline)
+  * [Front End Testing](#Frontend)
+  * [Back End Testing](#Backend)
+  * [Coverage Report](#Coverage)
 * [Deployment](#Deployment)
+  * [Deployment Pipeline](#Pipeline)
 * [Costs](#Costs) 
 * [Retrospective](#Conclusion) 
   * [What Went Well](#Good)
@@ -168,29 +170,26 @@ The Kubernetes cluster has been created using Terraform in the testing and produ
 | Kubernetes | Used to create multiple nodes that will manage, scale and run the final application. |
 
 
-
-
 <a name="Testing"></a>
-
-######################################### Edit this for our case once the testing is done ########################################################
 ## Testing
 
-
-Things to add to the test sectrion:
+Things to add to the test section:
 1. backent testing
 2. frontend testing
 3. And requirements for both of them
 4. Add coverage
-#################################################################################
+
+<a name="Backend"></a>
+## Backend Testing
+
+<a name="Frontend"></a>
+## Frontend Testing
 
 
+<a name="Coverage"></a>
+## Coverage Report
 
-<a name="pipeline"></a>
-## Deployment Pipeline
 
-[deployment]: https://i.imgur.com/NM5hLSI.png
-
-![deployment][deployment]
 
 
 <a name="Deployment"></a>
@@ -198,6 +197,14 @@ Things to add to the test sectrion:
 
 We used Terraform to create the infrastructure (VM's and Kubernetes Cluster) after this process we used Ansible to go into the VM's we  created and install all the applications we would need for the project to work e.g Jenkins, Java, Python, Docker, Maven. After running Ansible we then trigger the build process which is running on our Jenkins CI/CD server, this tests the application and if the tests pass the deployment stage is triggered and the application is deployed to the Kubernetes Cluster on Azure. See video Below for more info.
 
+
+
+<a name="Pipeline"></a>
+## Deployment Pipeline
+
+[deployment]: https://i.imgur.com/NM5hLSI.png
+
+![deployment][deployment]
 
 
 
