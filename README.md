@@ -206,8 +206,9 @@ As previously mentioned, Terraform has been used to create the infrastructure. T
 
 <a name="Costs"></a>
 ## Costs
-We used Pricing Calculator to configure and estimate the monthly running costs for the AWS products that we needed to automate the deployment of the application. We decided that we need 2 Virtual Machines and the AWS Kubernetes Service.  we used eu-west-2 as region because that’s what we found available according to the subscription that we were using and we came to the conclusion that we would have an operational expenditure of £32.82 plus 0.01USD per hour to run terraform, paying only for what we are using with no upfront costs for the services.
-![Group-Cost](https://user-images.githubusercontent.com/61239212/80957894-fb42fb00-8dfb-11ea-9012-7492fdb57d4d.png)
+We used Pricing Calculator to configure and estimate the monthly running costs for the AWS services used. We have decided we needed 2 Virtual Machines and the AWS Kubernetes Service. The application has been deployed in the eu-west-3 region, meaning that the virtual resources we have used are based in Paris, Europe. We have been allocated a budget of £20 at the beginning of the project however, as the time went on, we have spent a very small amount of the allocated budget. The cost had been minimised by stopping the resources at the end of each working day and by setting up a billing alert when the cost increased to more than £5. 
+
+![Pricing](https://i.imgur.com/3EieeaX.png)
 
 
 
