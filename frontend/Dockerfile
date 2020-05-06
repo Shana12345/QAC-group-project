@@ -1,19 +1,13 @@
-FROM nginx:latest
+FROM node:12.2.0
+WORKDIR /app
+COPY package.json /app/package.json
+RUN npm install
+RUN npm install -g @angular/cli@latest
 
-WORKDIR /etc/nginx/
+# add app
+COPY . /app
+# start app
+#CMD ["ng","serve","--host", "0.0.0.0"]
 
-RUN rm /etc/nginx/conf.d/*
 
-RUN mkdir /usr/share/nginx/html/petclinic
-
-COPY ./angular.conf ./conf.d/
-
-COPY ./dist /usr/share/nginx/html/petclinic/
-
-RUN sudo apt install openjdk-8-jdk
-
-COPY /home/ubuntu/sd/QAC-group-project/backend/target/spring-petclinic-rest-2.2.5.jar /usr/share/nginx/html/backend/
-
-RUN mvn spring-boot:run
-
-RUN java -jar /usr/share/nginx/html/backend/spring-petclinic-rest-2.2.5.jar
+CMD ng serve --host 0.0.0.0 --port 4200 --disableHostCheck true

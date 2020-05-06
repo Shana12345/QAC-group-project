@@ -2,15 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
-  #namespace: 4yamlme-ns
 spec:
   selector:
     app: frontend
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
-  type: LoadBalancer
+    port: 4200
+    targetPort: 4200
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -19,7 +18,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 1     
+  replicas: 1      
   selector:
     matchLabels:
       app: frontend
@@ -31,7 +30,6 @@ spec:
       hostname: frontend
       containers:
       - name: frontend
-        image: adelina09/frontend:latest
+        image: amranlab/frontend
         ports:
-        - containerPort: 80
-      
+        - containerPort: 4200
