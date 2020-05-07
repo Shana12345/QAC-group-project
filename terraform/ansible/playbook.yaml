@@ -77,7 +77,7 @@
     - kubectl # Install kubectl (based on aws instructions at https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
     - apprequirements # Install requirements to run tests on the app
 
-    - awscli # Installs aws cli
+    #- awscli # Installs aws cli
 
   tasks:
   - name: configuring jenkins user
