@@ -283,6 +283,8 @@ A Future Sprint has been displayed on the Trello Board below:
 *	Navigate into the terraform folder within this repository. Run terraform init to initialize a working directory containing Terraform configuration files.
 *	Run the terraform plan command to verify the integrity of the code.
 *	If no errors show up, use the command terraform apply to build the infrastructure. This will last around 10 minutes.
+* Navigate into EC2 folder inside, run the ip-exporter.sh file.
+* The .pem file associated with the aws account needs to be placed in the ansible folder (the ip-exporter currently tells the playbook to look for  nic1.pem, so either manually alter the inventory.cfg file or rename the .pem file).
 *	Navigate to the ansible folder within this repository and run the ansible playbook to install dependencies onto Jenkins server.
 *	Navigate to AWS web console and shh into the Jenkins server that has been created via terraform.
 *	Run sudo su jenkins command
@@ -297,7 +299,8 @@ A Future Sprint has been displayed on the Trello Board below:
 *	Open a web browser and paste it on the address bar with :8080 at the end of the URL.
 *	Log into Jenkins.
 * Install plugins and sign up to Jenkins as directed.
-*	Run the Jenkins Pipeline and Press build. This should deploy the Kubernetes automatically and create pods to deploy the app.
+* Build the Jenkins pipeline manually , associated with this git repository.
+*	Press build. This should deploy the Kubernetes automatically and create pods to deploy the app.
 
 
 
