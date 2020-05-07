@@ -215,7 +215,7 @@ The App was deployed using Ansible,Jenkins and Nginx.
 
 A video demonstrating the deployment process can be found below:
 
-[demonstration video]: https://www.youtube.com/watch?v=579_edlLmOM
+*[demonstration video](https://www.youtube.com/watch?v=579_edlLmOM)
 
 Below is the diagram demonstrating the **Deployment Process**:
 
