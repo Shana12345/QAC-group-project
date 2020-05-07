@@ -175,9 +175,12 @@ The Kubernetes cluster has been created using Terraform in the testing and produ
 <a name="Testing"></a>
 ## Testing
 
+Both applications came with pre-configured methods of testing; the backend application was tested using maven, and the frontend using karma. We were able to automate the testing process by having jenkins perform the relevant test functions.
 
 <a name="Backend"></a>
 ## Backend Testing Logs
+
+The backend app was set up to use maven to run the testing files. With maven installed, all that is needed is to run "mvn test" within the backend folder. This process was automated by having maven installed to the jenkins server by ansible, and the jenkins pipeline performing this test function. The logs of a successful backend test are below:
 
 [backend1]: https://i.imgur.com/uJ8MyA1.png
 
@@ -185,6 +188,8 @@ The Kubernetes cluster has been created using Terraform in the testing and produ
 
 <a name="Frontend"></a>
 ## Frontend Testing Logs
+
+The frontend app used Karma to run its testing files, via the command "ng test". To automate this process, ansible installed the required dependencies of the application, while jenkins performed the test command. The frontend test was configured to only output in a Google Chrome window, which could be accessed through the port 9876. This produced a page that tested the funcitonality of the frontend, and displayed the results. The logs of a successful frontend test are below.
 
 [frontend1]:  https://i.imgur.com/k97xgf0.png
 
@@ -207,6 +212,10 @@ The App was deployed using Ansible,Jenkins and Nginx.
 + This prevents human error as ansible is a configuration management tool therefore, it deploys the same software to as many worker nodes automatically without installing them manually which not only saves time but also prevents human error.
 + Jenkins server updates kubeconfig for EKS Cluster and deploys Kubernetes where the pods are created.
 + Nginx then conducts a Reverse Proxy into Frontend.
+
+A video demonstrating the deployment process can be found below:
+
+[demonstration video]: https://www.youtube.com/watch?v=579_edlLmOM
 
 Below is the diagram demonstrating the **Deployment Process**:
 
